@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+
+<head th:replace="~{base::head}"></head>
+
+<body>
+    <!-- Navbar Start -->
+    <div th:replace="~{base::navbar(testimonial='active')}"></div>
+    <!-- Navbar End -->
+
+
+	<!-- Page Header Start -->
+	    <div th:replace="~{base::header(text='Testimonial')}"></div>
+    <!-- Page Header End -->
+
+
+    <!-- Testimonial Start -->
+    <!-- <div class="container-fluid py-5 testimonial-social" style="position: relative;">
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-title">
+                <h4 style="color: #ffd700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);">Social Proof</h4>
+                <h1 style="color: white; font-size: 3.5rem; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Customer Stories</h1>
+                <p class="lead" style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto;">Real experiences from our valued customers</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div th:replace="~{base::testimonial-card}" 
+                         th:with="clientImage='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&h=200&q=80&crop=faces', testimonialText='The best coffee in town! The atmosphere is perfect for meetings and the staff is incredibly friendly.', clientName='Sarah Johnson', clientTitle='Marketing Manager'"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div th:replace="~{base::testimonial-card}" 
+                         th:with="clientImage='https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=200&h=200&q=80&crop=faces', testimonialText='Amazing coffee and great service. I come here every morning before work. Highly recommended!', clientName='Michael Chen', clientTitle='Software Developer'"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div th:replace="~{base::testimonial-card}" 
+                         th:with="clientImage='https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=200&h=200&q=80&crop=faces', testimonialText='Perfect place to relax and enjoy quality coffee. The ambiance is wonderful and the coffee is exceptional.', clientName='Emily Davis', clientTitle='Graphic Designer'"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div th:replace="~{base::testimonial-card}" 
+                         th:with="clientImage='https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=200&h=200&q=80&crop=faces', testimonialText='Great coffee, friendly staff, and a cozy atmosphere. This is my go-to place for coffee meetings.', clientName='David Wilson', clientTitle='Business Owner'"></div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Additional Testimonials Start -->
+    <div class="container-fluid py-5" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h4>More Reviews</h4>
+                <h1>Customer Stories</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="modern-card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&h=120&q=80&crop=faces" class="rounded-circle me-3" width="60" height="60" alt="Client">
+                            <div>
+                                <h5 class="mb-0">Lisa Anderson</h5>
+                                <small class="text-muted">Regular Customer</small>
+                            </div>
+                        </div>
+                        <p class="mb-3">"I've been coming here for years. The coffee is consistently excellent and the staff remembers my order. It feels like home!"</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="modern-card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=120&h=120&q=80&crop=faces" class="rounded-circle me-3" width="60" height="60" alt="Client">
+                            <div>
+                                <h5 class="mb-0">James Rodriguez</h5>
+                                <small class="text-muted">Coffee Enthusiast</small>
+                            </div>
+                        </div>
+                        <p class="mb-3">"The baristas here are true artists. Every cup is crafted with precision and love. The best coffee experience in the city!"</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="modern-card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=120&h=120&q=80&crop=faces" class="rounded-circle me-3" width="60" height="60" alt="Client">
+                            <div>
+                                <h5 class="mb-0">Maria Garcia</h5>
+                                <small class="text-muted">Business Professional</small>
+                            </div>
+                        </div>
+                        <p class="mb-3">"Perfect for business meetings. Great coffee, comfortable seating, and excellent WiFi. I recommend it to all my colleagues."</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Additional Testimonials End -->
+
+
+    <!-- Footer Start -->
+    <div th:replace="~{base::footer}"></div>
+    <!-- Footer End -->
+
+
+	<!-- Back to Top -->
+		<div th:replace="~{base::script}"></div>
+</body>
+
+</html>

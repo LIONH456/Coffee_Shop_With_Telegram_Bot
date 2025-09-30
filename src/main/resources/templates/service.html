@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+
+<head th:replace="~{base::head}"></head>
+
+<body>
+    <!-- Navbar Start -->
+    <div th:replace="~{base::navbar(service='active')}"></div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div th:replace="~{base::header(text='Services')}"></div>
+    <!-- Page Header End -->
+
+    <!-- Service Start -->
+    <div class="container-fluid py-5 service-tech" style="position: relative;">
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-title">
+                <h4 style="color: #20c997; text-shadow: 0 0 10px rgba(32, 201, 151, 0.3);">Tech Services</h4>
+                <h1 style="color: white; font-size: 3.5rem; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Modern Solutions</h1>
+                <p class="lead" style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto;">Cutting-edge technology meets traditional coffee craftsmanship</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div th:replace="~{base::service-card}" 
+                         th:with="iconClass='fas fa-truck', serviceTitle='Fast Delivery', serviceDescription='Get your favorite coffee delivered to your doorstep within 30 minutes. We ensure fresh and hot delivery every time.'"></div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div th:replace="~{base::service-card}" 
+                         th:with="iconClass='fas fa-coffee', serviceTitle='Fresh Beans', serviceDescription='We source and roast the finest organic coffee beans daily. Every cup is a testament to our commitment to quality.'"></div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div th:replace="~{base::service-card}" 
+                         th:with="iconClass='fas fa-award', serviceTitle='Premium Quality', serviceDescription='Award-winning coffee blends crafted by expert baristas. We maintain the highest standards in every cup we serve.'"></div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div th:replace="~{base::service-card}" 
+                         th:with="iconClass='fas fa-calendar-alt', serviceTitle='Table Booking', serviceDescription='Reserve your table online for a seamless dining experience. Perfect for business meetings and special occasions.'"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Services Start -->
+    <div class="container-fluid py-5" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h4>Additional Services</h4>
+                <h1>More Than Just Coffee</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="modern-card p-4 text-center h-100">
+                        <div class="service-icon-wrapper d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px; background: var(--gradient-secondary); border-radius: 50%;">
+                            <i class="fas fa-wifi" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h4>Free WiFi</h4>
+                        <p>Stay connected with our high-speed internet while you enjoy your coffee.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="modern-card p-4 text-center h-100">
+                        <div class="service-icon-wrapper d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px; background: var(--gradient-secondary); border-radius: 50%;">
+                            <i class="fas fa-parking" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h4>Free Parking</h4>
+                        <p>Convenient parking available for all our customers. No hassle, just great coffee.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="modern-card p-4 text-center h-100">
+                        <div class="service-icon-wrapper d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px; background: var(--gradient-secondary); border-radius: 50%;">
+                            <i class="fas fa-gift" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h4>Gift Cards</h4>
+                        <p>Share the love of great coffee with our gift cards. Perfect for any occasion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Additional Services End -->
+
+
+    <!-- Footer Start -->
+ 	<div th:replace="~{base::footer}"></div>
+    <!-- Footer End -->
+
+
+	<!-- Back to Top -->
+		<div th:replace="~{base::script}"></div>
+</body>
+
+</html>

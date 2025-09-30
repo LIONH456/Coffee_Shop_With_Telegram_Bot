@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+
+<head th:replace="~{base::head}"></head>
+
+<body>
+	<!-- Navbar Start -->
+	<div th:replace="~{base::navbar(reservation='active')}"></div>
+	<!-- Navbar End -->
+
+
+	<!-- Page Header Start -->
+	<div th:replace="~{base::header(text='Reservation')}"></div>
+	<!-- Page Header End -->
+
+
+	<!-- Styles for reservation (scoped) -->
+	<style>
+		.luxury-offer {
+			background: rgba(255, 255, 255, 0.08);
+			backdrop-filter: blur(16px);
+			border-radius: 20px;
+			border: 2px solid rgba(255, 255, 255, 0.18);
+			box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+		}
+		.offer-title { color: #ffd700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-weight: 800; }
+		.offer-subtitle { color: #ffffff; font-size: 2.2rem; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+		.offer-text { color: #fff; opacity: 0.95; font-size: 1.1rem; line-height: 1.7; }
+		.offer-list { margin-top: 12px; }
+		.offer-list li { color: #fff; font-size: 1.05rem; padding: 6px 0; }
+		.offer-list i { color: #ffd700; margin-right: 10px; }
+
+		.luxury-form { 
+			background: rgba(255, 255, 255, 0.95);
+			backdrop-filter: blur(12px);
+			border-radius: 20px; 
+			border: 1px solid rgba(0,0,0,0.06);
+			box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+		}
+		.form-title { color: var(--text-dark); font-weight: 700; }
+		.input-group-text { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-right: none; }
+		.form-control, .custom-select { 
+			border: 1px solid rgba(0,0,0,0.08); 
+			border-left: none; 
+			padding: 0.9rem 1rem; 
+			border-radius: 12px; 
+		}
+		.input-group>.form-control { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+		.custom-select { height: 52px; }
+		.form-group { margin-bottom: 1rem; }
+		.btn-primary { background: var(--primary-color); border-color: var(--primary-color); border-radius: 12px; }
+		.btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); }
+	</style>
+
+	<!-- Reservation Start -->
+	<div class="container-fluid py-5 reservation-luxury" th:fragment="booking">
+	    <div class="container">
+	        <div class="">
+	            <div class="row align-items-center">
+	                <!-- Left Section -->
+	                <div class="col-lg-6 my-5 my-lg-0">
+	                    <div class="luxury-offer p-5">
+	                        <div class="mb-4">
+	                            <h1 class="display-3 offer-title">30% OFF</h1>
+	                            <h1 class="offer-subtitle">Luxury Reservation</h1>
+	                        </div>
+	                        <p class="offer-text">
+	                            Experience the finest coffee in an elegant atmosphere. Book your table now 
+	                            and enjoy our premium service with exclusive benefits.
+	                        </p>
+	                        <ul class="list-inline offer-list">
+	                            <li><i class="fa fa-check"></i> Premium coffee selection</li>
+	                            <li><i class="fa fa-check"></i> Elegant dining atmosphere</li>
+	                            <li><i class="fa fa-check"></i> Personalized service</li>
+	                        </ul>
+	                    </div>
+	                </div>
+
+	                <!-- Right Section -->
+	                <div class="col-lg-6">
+	                    <div class="luxury-form p-5 text-center">
+	                        <h1 class="form-title mb-4 mt-5">Book Your Table</h1>
+	                        <form class="mb-5" th:object="${booked}" th:action="@{/success}" th:method="post">
+	                            <div class="form-group">
+	                                <input type="text" class="form-control" placeholder="Name" required th:field="*{name}" />
+	                            </div>
+	                            <div class="form-group">
+	                                <input type="email" class="form-control" placeholder="Email" required th:field="*{email}" />
+	                            </div>
+	                            <div class="form-group">
+	                                <input type="number" class="form-control" placeholder="Phone Number" required th:field="*{phoneNumber}" />
+	                            </div>
+	                            <div class="form-group">
+	                                <div class="date" id="date" data-target-input="nearest">
+	                                    <input type="text" class="form-control datetimepicker-input" placeholder="Date" data-target="#date" data-toggle="datetimepicker" th:field="*{date}" />
+	                                </div>
+	                            </div>
+	                            <div class="form-group">
+	                                <div class="time" id="time" data-target-input="nearest">
+	                                    <input type="text" class="form-control datetimepicker-input" placeholder="Time" data-target="#time" data-toggle="datetimepicker" th:field="*{time}" />
+	                                </div>
+	                            </div>
+	                            <div class="form-group">
+	                                <select class="custom-select" th:field="*{person}">
+	                                    <option selected value="0">Person</option>
+	                                    <option value="1">Person 1</option>
+	                                    <option value="2">Person 2</option>
+	                                    <option value="3">Person 3</option>
+	                                    <option value="4">Person 4</option>
+	                                    <option value="5">Person 5</option>
+	                                    <option value="10">Person 10+</option>
+	                                </select>
+	                            </div>
+
+	                            <div>
+	                                <button class="btn btn-primary btn-block font-weight-bold py-3" type="submit">Book Now</button>
+	                            </div>
+	                        </form>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<!-- Reservation End -->
+
+
+	<!-- Footer Start -->
+	<div th:replace="~{base::footer}"></div>
+	<!-- Footer End -->
+
+
+	<!-- Back to Top -->
+	<div th:replace="~{base::script}"></div>
+</body>
+
+</html>

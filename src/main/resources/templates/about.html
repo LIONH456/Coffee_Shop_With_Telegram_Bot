@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+
+<head th:replace="~{base::head}"></head>
+
+<body>
+    <!-- Navbar Start -->
+    <div th:replace="~{base::navbar(about='active')}"></div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div th:replace="~{base::header(text='About Us')}"></div>
+    <!-- Page Header End -->
+
+    <!-- About Start -->
+    <div class="container-fluid py-5 about-story" style="position: relative;">
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-title">
+                <h4 style="color: var(--primary-color);">Our Heritage</h4>
+                <h1 style="color: var(--text-dark); font-size: 3.5rem; font-weight: 700;">Serving Since 1950</h1>
+                <p class="lead" style="color: var(--text-light); max-width: 600px; margin: 0 auto;">A legacy of passion, tradition, and exceptional coffee that spans generations</p>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5">
+                    <div class="modern-card p-5 h-100" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 2px solid rgba(107, 68, 35, 0.1);">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="me-3">
+                                <i class="fas fa-coffee" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                            </div>
+                            <h2 class="mb-0" style="color: var(--text-dark);">Our Story</h2>
+                        </div>
+                        <p class="lead mb-4" style="color: var(--text-dark); font-size: 1.2rem;">For over seven decades, we've been crafting exceptional coffee experiences that bring people together.</p>
+                        <p class="mb-4" style="color: var(--text-light); line-height: 1.8;">What started as a small family business in 1950 has grown into a beloved community gathering place. We source the finest beans from around the world and roast them to perfection, ensuring every cup tells a story of quality and passion.</p>
+                        <p class="mb-4" style="color: var(--text-light); line-height: 1.8;">Our commitment to excellence has made us a cornerstone of the community, where friends meet, business deals are made, and memories are created over the perfect cup of coffee.</p>
+                        <a th:href="@{/contact}" class="modern-btn" style="background: var(--gradient-primary); padding: 1rem 2.5rem; font-size: 1.1rem;">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image position-relative">
+                        <img src="img/about.png" alt="About Us" class="img-fluid rounded-3 shadow-lg" style="border: 4px solid rgba(107, 68, 35, 0.2);">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(107, 68, 35, 0.1), transparent); border-radius: 1rem;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Values Start -->
+    <div class="container-fluid py-5" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h4>Our Values</h4>
+                <h1>What Drives Us</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="modern-card p-4 text-center h-100">
+                        <div class="service-icon-wrapper d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px; background: var(--gradient-secondary); border-radius: 50%;">
+                            <i class="fas fa-heart" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h4>Passion</h4>
+                        <p>We're passionate about coffee and creating memorable experiences for our customers every day.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="modern-card p-4 text-center h-100">
+                        <div class="service-icon-wrapper d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px; background: var(--gradient-secondary); border-radius: 50%;">
+                            <i class="fas fa-leaf" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h4>Quality</h4>
+                        <p>We source only the finest organic beans and maintain the highest standards in everything we do.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="modern-card p-4 text-center h-100">
+                        <div class="service-icon-wrapper d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px; background: var(--gradient-secondary); border-radius: 50%;">
+                            <i class="fas fa-users" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h4>Community</h4>
+                        <p>We believe in building strong community connections and supporting local initiatives.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Values End -->
+
+
+    <!-- Footer Start -->
+	<div th:replace="~{base::footer}"></div>
+    <!-- Footer End -->
+
+
+	<!-- Back to Top -->
+		<div th:replace="~{base::script}"></div>
+</body>
+
+</html>

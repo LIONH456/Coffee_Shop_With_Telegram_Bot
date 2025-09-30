@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+
+<head th:replace="~{base::head}"></head>
+<body>
+    <!-- Navbar Start -->
+	<div th:replace="~{base::navbar(home='active')}"></div>
+    <!-- Navbar End -->
+
+    <!-- Auto-Animating Slideshow Start -->
+    <div class="slideshow-container" style="position: relative; height: 100vh; overflow: hidden;">
+        <!-- Slide 1 -->
+        <div class="slide active" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('img/S1.png'); background-size: cover; background-position: center; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 80px;">
+            <div class="hero-buttons d-flex" style="gap: 20px;">
+                <a href="/menu" class="modern-btn-3d">View Menu</a>
+                <a href="/reservation" class="modern-btn-3d">Book Table</a>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('img/S2.png'); background-size: cover; background-position: center; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 80px;">
+            <div class="hero-buttons d-flex" style="gap: 20px;">
+                <a href="/menu" class="modern-btn-3d">View Menu</a>
+                <a href="/reservation" class="modern-btn-3d">Book Table</a>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('img/S3.png'); background-size: cover; background-position: center; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 80px;">
+            <div class="hero-buttons d-flex" style="gap: 20px;">
+                <a href="/menu" class="modern-btn-3d">View Menu</a>
+                <a href="/reservation" class="modern-btn-3d">Book Table</a>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('img/S4.png'); background-size: cover; background-position: center; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 80px;">
+            <div class="hero-buttons d-flex" style="gap: 20px;">
+                <a href="/menu" class="modern-btn-3d">View Menu</a>
+                <a href="/reservation" class="modern-btn-3d">Book Table</a>
+            </div>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="slideshow-dots" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px;">
+            <span class="dot active" onclick="currentSlide(1)" style="height: 15px; width: 15px; background-color: rgba(255,255,255,0.5); border-radius: 50%; cursor: pointer; transition: background-color 0.3s;"></span>
+            <span class="dot" onclick="currentSlide(2)" style="height: 15px; width: 15px; background-color: rgba(255,255,255,0.5); border-radius: 50%; cursor: pointer; transition: background-color 0.3s;"></span>
+            <span class="dot" onclick="currentSlide(3)" style="height: 15px; width: 15px; background-color: rgba(255,255,255,0.5); border-radius: 50%; cursor: pointer; transition: background-color 0.3s;"></span>
+            <span class="dot" onclick="currentSlide(4)" style="height: 15px; width: 15px; background-color: rgba(255,255,255,0.5); border-radius: 50%; cursor: pointer; transition: background-color 0.3s;"></span>
+        </div>
+    </div>
+    <!-- Auto-Animating Slideshow End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h4>About Us</h4>
+                <h1>Serving Since 1950</h1>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5">
+                    <div class="modern-card p-5 h-100">
+                        <h2 class="mb-4">Our Story</h2>
+                        <p class="lead mb-4">For over seven decades, we've been crafting exceptional coffee experiences that bring people together.</p>
+                        <p class="mb-4">What started as a small family business in 1950 has grown into a beloved community gathering place. We source the finest beans from around the world and roast them to perfection, ensuring every cup tells a story of quality and passion.</p>
+                        <a th:href="@{/about}" class="modern-btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <img src="img/about.png" alt="About Us" class="img-fluid rounded-3 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Service Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="section-title">
+                <h4>Our Services</h4>
+                <h1>Fresh & Organic Beans</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div th:replace="~{base::service-card}" 
+                         th:with="iconClass='fas fa-truck', serviceTitle='Fast Delivery', serviceDescription='Get your favorite coffee delivered to your doorstep within 30 minutes.'"></div>
+                        </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div th:replace="~{base::service-card}" 
+                         th:with="iconClass='fas fa-coffee', serviceTitle='Fresh Beans', serviceDescription='We source and roast the finest organic coffee beans daily.'"></div>
+                        </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div th:replace="~{base::service-card}" 
+                         th:with="iconClass='fas fa-award', serviceTitle='Premium Quality', serviceDescription='Award-winning coffee blends crafted by expert baristas.'"></div>
+                    </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div th:replace="~{base::service-card}" 
+                         th:with="iconClass='fas fa-calendar-alt', serviceTitle='Table Booking', serviceDescription='Reserve your table online for a seamless dining experience.'"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Special Offer Start -->
+    <div class="container-fluid py-5" style="background: var(--gradient-primary);">
+        <div class="container text-center text-white">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-3 mb-3">50% OFF</h1>
+                    <h2 class="mb-4">Sunday Special Offer</h2>
+                    <p class="lead mb-4">Enjoy our premium coffee blends at half price every Sunday. Limited time offer!</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <form class="d-flex gap-3">
+                                <input type="email" class="form-control form-control-lg" placeholder="Enter your email" style="border-radius: 12px;">
+                                <button class="btn btn-light btn-lg px-4" type="submit" style="border-radius: 12px; font-weight: 600;">Subscribe</button>
+            </form>
+        </div>
+    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Special Offer End -->
+
+
+    <!-- Menu Start -->
+    <div class="container-fluid py-5" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h4>Menu & Pricing</h4>
+                <h1>Competitive Pricing</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-5">
+                    <div class="modern-card p-4">
+                        <h3 class="mb-4 text-center">Hot Coffee</h3>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Classic Black Coffee">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Classic Black Coffee</h5>
+                                    <p class="text-muted mb-0">Rich, bold, and perfectly brewed black coffee</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$5.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Chocolate Coffee">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Chocolate Coffee</h5>
+                                    <p class="text-muted mb-0">Smooth coffee with rich chocolate flavor</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$7.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Coffee with Milk">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Coffee with Milk</h5>
+                                    <p class="text-muted mb-0">Creamy coffee with steamed milk</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$9.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                <div class="col-lg-6 mb-5">
+                    <div class="modern-card p-4">
+                        <h3 class="mb-4 text-center">Cold Coffee</h3>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1461988091159-192b6df7054f?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Iced Black Coffee">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Iced Black Coffee</h5>
+                                    <p class="text-muted mb-0">Refreshing cold black coffee</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$5.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Iced Chocolate Coffee">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Iced Chocolate Coffee</h5>
+                                    <p class="text-muted mb-0">Cold coffee with chocolate syrup</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$7.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Iced Coffee with Milk">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Iced Coffee with Milk</h5>
+                                    <p class="text-muted mb-0">Cold coffee with cold milk</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$9.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="text-center">
+                <a th:href="@{/menu}" class="modern-btn">View Full Menu</a>
+            </div>
+        </div>
+    </div>
+    <!-- Menu End -->
+
+
+    <!-- Reservation Start -->
+	<div th:replace="~{reservation::booking}"></div>
+    <!-- Reservation End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="section-title">
+                <h4>Testimonials</h4>
+                <h1>What Our Clients Say</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div th:replace="~{base::testimonial-card}" 
+                         th:with="clientImage='img/testimonial-1.jpg', testimonialText='The best coffee in town! The atmosphere is perfect for meetings and the staff is incredibly friendly.', clientName='Sarah Johnson', clientTitle='Marketing Manager'"></div>
+                        </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div th:replace="~{base::testimonial-card}" 
+                         th:with="clientImage='img/testimonial-2.jpg', testimonialText='Amazing coffee and great service. I come here every morning before work. Highly recommended!', clientName='Michael Chen', clientTitle='Software Developer'"></div>
+                    </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div th:replace="~{base::testimonial-card}" 
+                         th:with="clientImage='img/testimonial-3.jpg', testimonialText='Perfect place to relax and enjoy quality coffee. The ambiance is wonderful and the coffee is exceptional.', clientName='Emily Davis', clientTitle='Graphic Designer'"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div th:replace="~{base::testimonial-card}" 
+                         th:with="clientImage='img/testimonial-4.jpg', testimonialText='Great coffee, friendly staff, and a cozy atmosphere. This is my go-to place for coffee meetings.', clientName='David Wilson', clientTitle='Business Owner'"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Footer Start -->
+    <div th:replace="~{base::footer}"></div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+	<div th:replace="~{base::script}"></div>
+
+	<!-- Slideshow JavaScript -->
+	<script>
+		let slideIndex = 0;
+		const slides = document.querySelectorAll('.slide');
+		const dots = document.querySelectorAll('.dot');
+
+
+		function showSlide(n) {
+			// Hide all slides
+			slides.forEach(slide => {
+				slide.style.opacity = '0';
+				slide.classList.remove('active');
+			});
+			
+			// Remove active class from all dots
+			dots.forEach(dot => {
+				dot.classList.remove('active');
+				dot.style.backgroundColor = 'rgba(255,255,255,0.5)';
+			});
+
+			// Show current slide
+			if (n > slides.length) slideIndex = 1;
+			if (n < 1) slideIndex = slides.length;
+			
+			slides[slideIndex - 1].style.opacity = '1';
+			slides[slideIndex - 1].classList.add('active');
+			dots[slideIndex - 1].classList.add('active');
+			dots[slideIndex - 1].style.backgroundColor = 'rgba(255,255,255,0.9)';
+
+		}
+
+		function currentSlide(n) {
+			slideIndex = n;
+			showSlide(slideIndex);
+		}
+
+		function nextSlide() {
+			slideIndex++;
+			if (slideIndex > slides.length) slideIndex = 1;
+			showSlide(slideIndex);
+		}
+
+		// Auto-advance slides every 5 seconds
+		setInterval(nextSlide, 8000);
+
+		// Initialize slideshow
+		document.addEventListener('DOMContentLoaded', function() {
+			showSlide(1);
+		});
+
+		// Add fade-in animation to slides
+		document.addEventListener('DOMContentLoaded', function() {
+			slides.forEach((slide, index) => {
+				slide.style.transition = 'opacity 1s ease-in-out';
+				slide.style.opacity = index === 0 ? '1' : '0';
+			});
+		});
+	</script>
+</body>
+
+</html>

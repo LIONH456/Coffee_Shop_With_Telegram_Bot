@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+
+<head th:replace="~{base::head}"></head>
+
+<body>
+    <!-- Navbar Start -->
+    <div th:replace="~{base::navbar}"></div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div th:replace="~{base::header(text='Booking Confirmed')}"></div>
+    <!-- Page Header End -->
+
+    <!-- Success Start -->
+	<div class="container-fluid py-5 success-celebration" style="position: relative;">
+	    <div class="container" style="position: relative; z-index: 2;">
+	        <div class="row justify-content-center">
+	            <div class="col-lg-8">
+	                <div class="modern-card p-5 text-center" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border: 3px solid rgba(255, 255, 255, 0.3); box-shadow: 0 25px 50px rgba(0,0,0,0.2);">
+	                    <div class="success-icon mb-4">
+	                        <div class="d-inline-flex align-items-center justify-content-center" 
+                             style="width: 120px; height: 120px; background: linear-gradient(135deg, #28a745, #20c997); border-radius: 50%; box-shadow: 0 15px 30px rgba(40, 167, 69, 0.4); animation: pulse 2s infinite;">
+	                            <i class="fas fa-check" style="font-size: 4rem; color: white;"></i>
+	                        </div>
+	                    </div>
+	                    <h2 class="mb-3" style="color: var(--text-dark); font-size: 2.5rem; font-weight: 700;">🎉 Booking Confirmed! 🎉</h2>
+	                    <p class="lead mb-4" style="color: var(--text-light); font-size: 1.3rem;">Thank you for your reservation. We're excited to serve you!</p>
+	                    
+	                    <div class="booking-details-box">
+	                        <h4 class="mb-4">Reservation Details</h4>
+	                        <div class="table-responsive">
+	                            <table class="table table-borderless">
+	                                <tbody>
+	                                    <tr>
+	                                        <th scope="row" class="text-start">Booking ID</th>
+	                                        <td class="text-end" th:text="${booked.id}">#12345</td>
+	                                    </tr>
+	                                    <tr>
+	                                        <th scope="row" class="text-start">Name</th>
+	                                        <td class="text-end" th:text="${booked.name}">John Doe</td>
+	                                    </tr>
+	                                    <tr>
+	                                        <th scope="row" class="text-start">Contact Number</th>
+	                                        <td class="text-end" th:text="${booked.phoneNumber}">+1 (555) 123-4567</td>
+	                                    </tr>
+	                                    <tr>
+	                                        <th scope="row" class="text-start">Email</th>
+	                                        <td class="text-end" th:text="${booked.email}">john@example.com</td>
+	                                    </tr>
+	                                    <tr>
+	                                        <th scope="row" class="text-start">Date</th>
+	                                        <td class="text-end" th:text="${booked.date}">December 25, 2024</td>
+	                                    </tr>
+	                                    <tr>
+	                                        <th scope="row" class="text-start">Time</th>
+	                                        <td class="text-end" th:text="${booked.time}">7:00 PM</td>
+	                                    </tr>
+	                                    <tr>
+	                                        <th scope="row" class="text-start">Number of People</th>
+	                                        <td class="text-end" th:text="${booked.person}">4</td>
+	                                    </tr>
+	                                </tbody>
+	                            </table>
+	                        </div>
+	                    </div>
+	                    
+	                    <div class="mt-4">
+	                        <a th:href="@{/home}" class="modern-btn me-3">Back to Home</a>
+	                        <a th:href="@{/menu}" class="btn btn-outline-primary btn-lg">View Menu</a>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+    <!-- Success End -->
+
+
+    <!-- Footer Start -->
+	<div th:replace="~{base::footer}"></div>
+    <!-- Footer End -->
+
+
+	<!-- Back to Top -->
+		<div th:replace="~{base::script}"></div>
+</body>
+
+
+</html>
+

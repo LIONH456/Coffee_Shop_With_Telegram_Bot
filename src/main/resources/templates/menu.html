@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+
+<head th:replace="~{base::head}"></head>
+
+<body>
+    <!-- Navbar Start -->
+    <div th:replace="~{base::navbar(menu='active')}"></div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div th:replace="~{base::header(text='Menu')}"></div>
+    <!-- Page Header End -->
+
+    <!-- Menu Start -->
+    <div class="container-fluid py-5 menu-foodie" style="position: relative;">
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-title">
+                <h4 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Delicious Menu</h4>
+                <h1 style="color: white; font-size: 3.5rem; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Food & Beverage</h1>
+                <p class="lead" style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">Discover our carefully crafted menu featuring premium coffee and delicious treats</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-5">
+                    <div class="modern-card p-4">
+                        <h3 class="mb-4 text-center">Hot Coffee</h3>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Classic Black Coffee">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Classic Black Coffee</h5>
+                                    <p class="text-muted mb-0">Rich, bold, and perfectly brewed black coffee</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$5.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Chocolate Coffee">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Chocolate Coffee</h5>
+                                    <p class="text-muted mb-0">Smooth coffee with rich chocolate flavor</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$7.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Coffee with Milk">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Coffee with Milk</h5>
+                                    <p class="text-muted mb-0">Creamy coffee with steamed milk</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$9.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Cappuccino">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Cappuccino</h5>
+                                    <p class="text-muted mb-0">Perfect blend of espresso, steamed milk, and foam</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$8.50</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Latte">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Latte</h5>
+                                    <p class="text-muted mb-0">Smooth espresso with steamed milk and light foam</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$9.50</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-5">
+                    <div class="modern-card p-4">
+                        <h3 class="mb-4 text-center">Cold Coffee</h3>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1461988091159-192b6df7054f?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Iced Black Coffee">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Iced Black Coffee</h5>
+                                    <p class="text-muted mb-0">Refreshing cold black coffee</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$5.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Iced Chocolate Coffee">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Iced Chocolate Coffee</h5>
+                                    <p class="text-muted mb-0">Cold coffee with chocolate syrup</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$7.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Iced Coffee with Milk">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Iced Coffee with Milk</h5>
+                                    <p class="text-muted mb-0">Cold coffee with cold milk</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$9.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Frappuccino">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Frappuccino</h5>
+                                    <p class="text-muted mb-0">Blended coffee drink with ice and cream</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$10.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1502465771179-51f3535da42f?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Cold Brew">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Cold Brew</h5>
+                                    <p class="text-muted mb-0">Smooth, less acidic cold-brewed coffee</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$6.50</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Menu Items Start -->
+    <div class="container-fluid py-5" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h4>Additional Items</h4>
+                <h1>Pastries & Snacks</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="modern-card p-4">
+                        <h3 class="mb-4 text-center">Pastries</h3>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Croissant">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Croissant</h5>
+                                    <p class="text-muted mb-0">Freshly baked buttery croissant</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$3.50</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Muffin">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Muffin</h5>
+                                    <p class="text-muted mb-0">Homemade blueberry muffin</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$4.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Danish">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Danish</h5>
+                                    <p class="text-muted mb-0">Sweet pastry with fruit filling</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$4.50</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="modern-card p-4">
+                        <h3 class="mb-4 text-center">Sandwiches</h3>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Club Sandwich">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Club Sandwich</h5>
+                                    <p class="text-muted mb-0">Turkey, bacon, lettuce, and tomato</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$12.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Grilled Cheese">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Grilled Cheese</h5>
+                                    <p class="text-muted mb-0">Classic grilled cheese sandwich</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$8.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1543332164-6e82f355bad2?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Veggie Wrap">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Veggie Wrap</h5>
+                                    <p class="text-muted mb-0">Fresh vegetables in a tortilla wrap</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$9.50</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="modern-card p-4">
+                        <h3 class="mb-4 text-center">Desserts</h3>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1541781286675-09d5f2d03830?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Cheesecake">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Cheesecake</h5>
+                                    <p class="text-muted mb-0">Rich and creamy cheesecake</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$6.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1601972599720-b6fe9f3f3fbb?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Chocolate Cake">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Chocolate Cake</h5>
+                                    <p class="text-muted mb-0">Decadent chocolate layer cake</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$7.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modern-card p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <img src="https://images.unsplash.com/photo-1604908554027-0a118d1f2b41?auto=format&fit=crop&w=400&h=300&q=80" class="img-fluid rounded" alt="Tiramisu">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Tiramisu</h5>
+                                    <p class="text-muted mb-0">Classic Italian dessert</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <h5 class="text-primary mb-0">$8.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Additional Menu Items End -->
+
+
+    <!-- Footer Start -->
+    <div th:replace="~{base::footer}"></div>
+    <!-- Footer End -->
+
+
+	<!-- Back to Top -->
+		<div th:replace="~{base::script}"></div>
+</body>
+
+</html>
