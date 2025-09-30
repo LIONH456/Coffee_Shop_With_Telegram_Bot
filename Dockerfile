@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # -------- Build stage --------
-FROM eclipse-temurin:17-jdk-alpine AS build
+FROM eclipse-temurin:21-jdk-alpine AS build
 WORKDIR /workspace
 
 # Install bash and basic tools (optional but useful)
@@ -23,7 +23,7 @@ COPY . .
 RUN ./gradlew --no-daemon clean bootJar -x test
 
 # -------- Runtime stage --------
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:21-jre-alpine
 ENV SPRING_PROFILES_ACTIVE=render
 ENV JAVA_OPTS=""
 WORKDIR /app
