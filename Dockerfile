@@ -4,14 +4,14 @@
 FROM eclipse-temurin:21-jdk-alpine AS build
 WORKDIR /workspace
 
-# Install bash and basic tools (optional but useful)
-RUN apk add --no-cache bash
+# Install bash and helpers
+RUN apk add --no-cache bash dos2unix
 
 # Copy Gradle wrapper and build files first to cache dependencies
 COPY gradlew ./
 COPY gradle ./gradle
 COPY build.gradle settings.gradle ./
-RUN chmod +x ./gradlew
+RUN dos2unix ./gradlew && chmod +x ./gradlew
 
 # Warm up Gradle dependency cache (no source yet)
 RUN ./gradlew --no-daemon build -x test || true
@@ -20,7 +20,7 @@ RUN ./gradlew --no-daemon build -x test || true
 COPY . .
 
 # Build a bootable jar (skip tests for faster/safer CI build)
-RUN ./gradlew --no-daemon clean bootJar -x test
+RUN dos2unix ./gradlew && chmod +x ./gradlew && ./gradlew --no-daemon clean bootJar -x test
 
 # -------- Runtime stage --------
 FROM eclipse-temurin:21-jre-alpine
