@@ -1,17 +1,26 @@
 # syntax=docker/dockerfile:1
 
 # -------- Build stage --------
-FROM gradle:8.8-jdk17-alpine AS build
-WORKDIR /home/gradle/project
+FROM eclipse-temurin:17-jdk-alpine AS build
+WORKDIR /workspace
 
-# Cache dependencies first
-COPY build.gradle settings.gradle ./
+# Install bash and basic tools (optional but useful)
+RUN apk add --no-cache bash
+
+# Copy Gradle wrapper and build files first to cache dependencies
+COPY gradlew ./
 COPY gradle ./gradle
-RUN gradle --no-daemon build -x test || true
+COPY build.gradle settings.gradle ./
+RUN chmod +x ./gradlew
 
-# Copy the rest of the source
+# Warm up Gradle dependency cache (no source yet)
+RUN ./gradlew --no-daemon build -x test || true
+
+# Copy the rest of the source code
 COPY . .
-RUN gradle --no-daemon clean build -x test
+
+# Build a bootable jar (skip tests for faster/safer CI build)
+RUN ./gradlew --no-daemon clean bootJar -x test
 
 # -------- Runtime stage --------
 FROM eclipse-temurin:17-jre-alpine
@@ -20,7 +29,7 @@ ENV JAVA_OPTS=""
 WORKDIR /app
 
 # Copy built jar
-COPY --from=build /home/gradle/project/build/libs/*.jar /app/app.jar
+COPY --from=build /workspace/build/libs/*.jar /app/app.jar
 
 # Render provides PORT env var
 ENV PORT=8080
